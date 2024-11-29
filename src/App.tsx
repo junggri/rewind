@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {AppDispatch, RootState} from "@/redux/store";
-import {increase} from "@/redux/state/testSlice";
+import {increase} from "@/redux/slice/testSlice";
 import {useAppDispatch, useAppSelector} from "@/redux/hook";
 
 function App() {
