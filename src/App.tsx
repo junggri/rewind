@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import {AppDispatch, RootState} from "@/redux/store";
+import {increase} from "@/redux/state/testSlice";
+import {useAppDispatch, useAppSelector} from "@/redux/hook";
 
 function App() {
+  const test = useAppSelector((state)=> { return state.test.value });
+  console.log(test)
+  
+  const dispatch: AppDispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(increase())
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>1123</div>
   );
 }
 
